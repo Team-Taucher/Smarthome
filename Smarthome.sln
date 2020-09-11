@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication.Database", "s
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Api", "src\Business.Api\Business.Api.csproj", "{37756431-3E48-47E9-9A00-98A3351AF6F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication.Raspberry", "src\Communication.Raspberry\Communication.Raspberry.csproj", "{E36EF5ED-423E-4805-B845-1B84740E2518}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{37756431-3E48-47E9-9A00-98A3351AF6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37756431-3E48-47E9-9A00-98A3351AF6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37756431-3E48-47E9-9A00-98A3351AF6F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E36EF5ED-423E-4805-B845-1B84740E2518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36EF5ED-423E-4805-B845-1B84740E2518}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36EF5ED-423E-4805-B845-1B84740E2518}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36EF5ED-423E-4805-B845-1B84740E2518}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
