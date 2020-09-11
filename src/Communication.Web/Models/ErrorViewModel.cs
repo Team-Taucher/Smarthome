@@ -1,6 +1,7 @@
 using System;
 
-namespace SmarthomeWeb.Models {
+namespace Gelp.SmartHome.Communication.Web.Models
+{
     public class ErrorViewModel {
         public string RequestId { get; set; }
 

@@ -5,9 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SmarthomeWeb.Models;
+using Gelp.SmartHome.Communication.Web.Models;
 
-namespace SmarthomeWeb.Controllers {
+namespace Gelp.SmartHome.Communication.Web.Controllers
+{
     public class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
 
