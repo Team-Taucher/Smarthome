@@ -1,0 +1,55 @@
+@startuml RepositoryClassDiagram
+
+package Communication.Database {
+    abstract BaseRepository<T : BaseObject> {
+        # DatabaseConnector : DatabaseConnector
+        # CollectionName : string
+
+        # BaseRepository(string collectionName) : BaseRepository
+        + Create(T entity) : bool
+        + Read(ObectId id) : T
+        + Update(ObjectId id, T entity) : bool
+        + Delete(T entity) : bool
+    }
+
+    class UserRepository {
+        + UserRepository() : UserRepository
+        + FindUserByCredentials(string username, string password): User
+    }
+
+    class DeviceRepository {
+        + DeviceRepository() : DeviceRepository
+    }
+
+    class DatabaseConnector {
+        + Connect() : IMongoDatabase
+    }
+
+    UserRepository .up.|> BaseRepository
+    DeviceRepository .up.|> BaseRepository
+    BaseRepository -left-> DatabaseConnector
+}
+
+package Common.Data {
+    class BaseObject {
+        + Id : ObjectId
+    }
+
+    class Device {
+        + Name : string
+        + PinNumber : int
+        + IsActivated : bool
+    }
+
+    class User {
+        + Username : string
+        + Password : string
+    }
+
+    User .up.|> BaseObject
+    Device .up.|> BaseObject
+}
+
+BaseRepository .right.> BaseObject
+
+@enduml
