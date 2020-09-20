@@ -11,9 +11,9 @@
         public string Name { get; set; }
 
         /// <summary>
-        /// Port of the device
+        /// Pin-number of the device
         /// </summary>
-        public int Port { get; set; }
+        public int PinNumber { get; set; }
 
         /// <summary>
         /// Indicates whether the device is activated or not
