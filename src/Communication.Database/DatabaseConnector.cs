@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
 
-namespace Gelp.SmartHome.Business.Database
+namespace Gelp.SmartHome.Communication.Database
 {
     /// <summary>
     /// Connector to the database

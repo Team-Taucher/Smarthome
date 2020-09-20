@@ -4,7 +4,7 @@ using MongoDB.Driver;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Gelp.SmartHome.Business.Database
+namespace Gelp.SmartHome.Communication.Database
 {
     /// <summary>
     /// Repository containing default-implementations for communicating with the database.
@@ -19,7 +19,7 @@ namespace Gelp.SmartHome.Business.Database
         /// Constructor for inherited repositories
         /// </summary>
         /// <param name="collectionName">Name of the collection to connect to</param>
-        public BaseRepository(string collectionName)
+        protected BaseRepository(string collectionName)
         {
             DatabaseConnector = new DatabaseConnector();
             CollectionName = collectionName;
