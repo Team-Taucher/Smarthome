@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Gelp.SmartHome.Business.Authentication;
 
 namespace Gelp.SmartHome.Communication.Web
 {
@@ -21,6 +23,10 @@ namespace Gelp.SmartHome.Communication.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddControllersWithViews();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add<AuthorizedAttribute>();
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
