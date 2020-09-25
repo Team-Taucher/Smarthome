@@ -1,0 +1,13 @@
+@startuml AuthorizationSequenceDiagram 
+actor User
+
+User -> APIEndpoint : Calls an API
+APIEndpoint -> Asp.Net : Prepares logic
+Asp.Net -> AuthorizedAttrbiute : Checks for authorization
+AuthorizedAttrbiute -> Asp.Net : Is user authorized
+Asp.Net -> Controller : Finally runs logic
+Controller -> Asp.Net : Action result
+Asp.Net -> APIEndpoint : Returns formatted result
+APIEndpoint -> User : Sends result to user
+
+@enduml
