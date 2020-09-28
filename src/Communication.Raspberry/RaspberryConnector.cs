@@ -17,8 +17,7 @@ namespace Gelp.SmartHome.Communication.Raspberry
         /// <summary>
         /// Give voltage to pin
         /// </summary>
-        /// <param name="pinToOpen">The pin to open</param>$
-        /// <param name="pinValue">Value of the pin</param>
+        /// <param name="pinToOpen">The pin to open</param>
         public void SetHigh(int pinToOpen)
         {
             // Open the GPIO pin for usage
