@@ -32,6 +32,7 @@ package Communication.Database {
 
 package Common.Data {
     class BaseObject {
+        + CollectionName : string
         + Id : ObjectId
     }
 
