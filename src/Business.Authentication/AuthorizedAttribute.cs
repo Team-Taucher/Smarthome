@@ -23,10 +23,24 @@ namespace Gelp.SmartHome.Business.Authentication
 
             if (isAuthorizationNeeded)
             {
-                var cookie = context.HttpContext.Request.Cookies["CookieKey"];
+                if (!context.HttpContext.Request.Cookies.ContainsKey("CookieKey"))
+                {
+                    // TODO: Redirect to login
+                }
 
-                // TODO: Split cookie up into username and password
-                var cookieUser = new User();
+                var cookieRaw = context.HttpContext.Request.Cookies["CookieKey"];
+
+                var cookieBytes = System.Convert.FromBase64String(cookieRaw);
+
+                var cookieEncoded = System.Text.Encoding.UTF8.GetString(cookieBytes);
+
+                var credentials = cookieEncoded.Split(", ");
+
+                var cookieUser = new User
+                {
+                    Username = credentials[0],
+                    Password = credentials[1]
+                };
 
                 var userResult = _userRepository.FindUserByCredentials(cookieUser.Username, cookieUser.Password);
 

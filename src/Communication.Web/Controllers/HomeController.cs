@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Gelp.SmartHome.Communication.Web.Models;
+using Gelp.SmartHome.Business.Authentication;
 
 namespace Gelp.SmartHome.Communication.Web.Controllers
 {
-    public class HomeController : Controller {
+    // Ab jetzt ohne weitere Authentifizierung nicht zugänglich
+    [Authorized]
+    public class HomeController : Controller 
+    {
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger) {
