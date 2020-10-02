@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Gelp.SmartHome.Common.Data;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System.Reflection;
+using Gelp.SmartHome.Communication.Database;
 
 namespace Gelp.SmartHome.Business.Authentication
 {
@@ -8,6 +10,7 @@ namespace Gelp.SmartHome.Business.Authentication
     /// </summary>
     public class AuthorizedAttribute : ActionFilterAttribute
     {
+        private readonly UserRepository _userRepository = new UserRepository();
         /// <summary>
         /// Gets executed before every API-Endpoint call and checks if the endpoint or assigned class has <see cref="AuthorizedAttribute"/>.
         /// Then, searches for a cookie with the credentials. These credentials will be Filters to find a user in the database.
@@ -20,11 +23,31 @@ namespace Gelp.SmartHome.Business.Authentication
 
             if (isAuthorizationNeeded)
             {
-                // TODO: Redirect to login
-            }
-            else
-            {
-                // TODO: Get cookie and search for credentials in the database
+                if (!context.HttpContext.Request.Cookies.ContainsKey("CookieKey"))
+                {
+                    // TODO: Redirect to login
+                }
+
+                var cookieRaw = context.HttpContext.Request.Cookies["CookieKey"];
+
+                var cookieBytes = System.Convert.FromBase64String(cookieRaw);
+
+                var cookieEncoded = System.Text.Encoding.UTF8.GetString(cookieBytes);
+
+                var credentials = cookieEncoded.Split(", ");
+
+                var cookieUser = new User
+                {
+                    Username = credentials[0],
+                    Password = credentials[1]
+                };
+
+                var userResult = _userRepository.FindUserByCredentials(cookieUser.Username, cookieUser.Password);
+
+                if (userResult == null)
+                {
+                    // TODO: Redirect to login
+                }
             }
         }
     }
