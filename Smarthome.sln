@@ -5,15 +5,15 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Communication.Web", "src\Communication.Web\Communication.Web.csproj", "{F933D603-0C5E-41C2-8085-D2BA9BCA41DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Data", "src\Common.Data\Common.Data.csproj", "{4F48C09A-AE27-410A-BF4E-A399616BF6EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Data", "src\Common.Data\Common.Data.csproj", "{4F48C09A-AE27-410A-BF4E-A399616BF6EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Authentication", "src\Business.Authentication\Business.Authentication.csproj", "{0E017759-F3D8-4EA5-9426-93A0CCAE1E5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Authentication", "src\Business.Authentication\Business.Authentication.csproj", "{0E017759-F3D8-4EA5-9426-93A0CCAE1E5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication.Database", "src\Business.Database\Communication.Database.csproj", "{9A4B72A0-145F-436E-9F6F-68A60CDE287F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business.Api", "src\Business.Api\Business.Api.csproj", "{37756431-3E48-47E9-9A00-98A3351AF6F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.Api", "src\Business.Api\Business.Api.csproj", "{37756431-3E48-47E9-9A00-98A3351AF6F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Communication.Raspberry", "src\Communication.Raspberry\Communication.Raspberry.csproj", "{E36EF5ED-423E-4805-B845-1B84740E2518}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication.Raspberry", "src\Communication.Raspberry\Communication.Raspberry.csproj", "{E36EF5ED-423E-4805-B845-1B84740E2518}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Communication.Database", "src\Communication.Database\Communication.Database.csproj", "{A17D97A3-29C0-4563-831F-57CF1669884E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{0E017759-F3D8-4EA5-9426-93A0CCAE1E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E017759-F3D8-4EA5-9426-93A0CCAE1E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E017759-F3D8-4EA5-9426-93A0CCAE1E5D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A4B72A0-145F-436E-9F6F-68A60CDE287F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A4B72A0-145F-436E-9F6F-68A60CDE287F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A4B72A0-145F-436E-9F6F-68A60CDE287F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A4B72A0-145F-436E-9F6F-68A60CDE287F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{37756431-3E48-47E9-9A00-98A3351AF6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{37756431-3E48-47E9-9A00-98A3351AF6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37756431-3E48-47E9-9A00-98A3351AF6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{E36EF5ED-423E-4805-B845-1B84740E2518}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E36EF5ED-423E-4805-B845-1B84740E2518}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E36EF5ED-423E-4805-B845-1B84740E2518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A17D97A3-29C0-4563-831F-57CF1669884E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17D97A3-29C0-4563-831F-57CF1669884E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17D97A3-29C0-4563-831F-57CF1669884E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17D97A3-29C0-4563-831F-57CF1669884E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
