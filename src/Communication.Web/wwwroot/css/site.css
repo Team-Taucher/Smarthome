@@ -56,11 +56,13 @@ button.accept-policy {
 html {
   position: relative;
   min-height: 100%;
+  background-color:#190A37;
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-color: #190A37;
 }
 .footer {
   position: absolute;
@@ -68,4 +70,66 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+.leftHalf {
+    float: left;
+}
+
+.rightHalf {
+    float: right;
+    align-self:center;
+    text-align:center;
+}
+
+.loginTop {
+    display:flex;
+    flex-wrap:nowrap;
+}
+
+.form {
+    margin: auto;
+    width: 30%;
+    height: 50%;
+    border-radius: 10px;
+    background-color: #7A699C;
+
+}
+
+.splitLine {
+    display:flex;
+}
+
+.hrlogin {
+    width:40%;
+    background-color:white;
+}
+
+.loginChange {
+    text-align:center;
+}
+
+.content {
+    align-self: center;
+}
+
+.form-control {
+    background-color: rgba(25,10,55,0.5);
+    border:none;
+}
+
+h1 {
+    color:white;
+}
+h2{
+    color:white;
+}
+
+.loginSubmit {
+    color:white;
+    font-size:18px;
+}
+
+p {
+    color:white;
 }
