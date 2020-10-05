@@ -19,21 +19,20 @@ namespace Gelp.SmartHome.Business.Authentication
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             var controllerType = context.Controller.GetType().GetTypeInfo();
-            var isAuthorizationNeeded = controllerType.GetCustomAttribute<AuthorizedAttribute>() == null;
+            var isAuthorizationNeeded = controllerType.GetCustomAttribute<AuthorizedAttribute>() != null;
 
             if (isAuthorizationNeeded)
             {
                 if (!context.HttpContext.Request.Cookies.ContainsKey("CookieKey"))
                 {
-                    // TODO: Redirect to login
+                    Redirect(context, "/login");
+                    return;
                 }
 
+                // Decode base64-cookie to the credentials
                 var cookieRaw = context.HttpContext.Request.Cookies["CookieKey"];
-
                 var cookieBytes = System.Convert.FromBase64String(cookieRaw);
-
                 var cookieEncoded = System.Text.Encoding.UTF8.GetString(cookieBytes);
-
                 var credentials = cookieEncoded.Split(", ");
 
                 var cookieUser = new User
@@ -42,13 +41,25 @@ namespace Gelp.SmartHome.Business.Authentication
                     Password = credentials[1]
                 };
 
+                // Search user in the repo with the matching credentials
                 var userResult = _userRepository.FindUserByCredentials(cookieUser.Username, cookieUser.Password);
 
                 if (userResult == null)
                 {
-                    // TODO: Redirect to login
+                    Redirect(context, "/login");
                 }
             }
+        }
+
+        /// <summary>
+        /// Redirects the Browser to the given url
+        /// </summary>
+        /// <param name="context">Context of the Action-Executing</param>
+        /// <param name="redirectUrl">Url to redirect to</param>
+        private void Redirect(ActionExecutingContext context, string redirectUrl)
+        {
+            var baseUrl = context.HttpContext.Request.Host.ToUriComponent();
+            context.HttpContext.Response.Redirect(baseUrl + redirectUrl);
         }
     }
 }

@@ -10,7 +10,6 @@ using Gelp.SmartHome.Business.Authentication;
 
 namespace Gelp.SmartHome.Communication.Web.Controllers
 {
-    // Ab jetzt ohne weitere Authentifizierung nicht zugänglich
     [Authorized]
     public class HomeController : Controller 
     {
