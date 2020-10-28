@@ -88,12 +88,14 @@ body {
 }
 
 .form {
-    margin: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
     width: 30%;
     height: 50%;
     border-radius: 10px;
     background-color: #7A699C;
-
+    margin-top: 40vh !important;
 }
 
 .splitLine {
