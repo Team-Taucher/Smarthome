@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common.Data\Common.Data.csproj" />
+    <ProjectReference Include="..\Communication.Database\Communication.Database.csproj" />
   </ItemGroup>
 
   <ItemGroup>
